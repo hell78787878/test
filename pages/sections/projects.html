@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Projects - Company Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+        <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../assets/css/main/global.css">
+    <link rel="stylesheet" href="../../assets/css/pages/projects.css">
+</head>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#f59e0b',
+                        dark: '#1f2937',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header id="header" class="fixed w-full top-0 bg-white shadow-md z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">C</span>
+                    </div>
+                    <a href="../main/index.html" class="text-xl font-bold text-dark">Company</a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../main/index.html" class="nav-link text-dark hover:text-primary transition-colors duration-300">Home</a>
+                    <a href="about.html" class="nav-link text-dark hover:text-primary transition-colors duration-300">About</a>
+                    <a href="projects.html" class="nav-link text-primary font-semibold">Projects</a>
+                    <a href="gallery.html" class="nav-link text-dark hover:text-primary transition-colors duration-300">Gallery</a>
+                    <a href="contact.html" class="nav-link text-dark hover:text-primary transition-colors duration-300">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-dark focus:outline-none" aria-label="Toggle mobile menu">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4">
+                <a href="../main/index.html" class="block py-2 text-dark hover:text-primary transition-colors duration-300">Home</a>
+                <a href="about.html" class="block py-2 text-dark hover:text-primary transition-colors duration-300">About</a>
+                <a href="projects.html" class="block py-2 text-primary font-semibold">Projects</a>
+                <a href="gallery.html" class="block py-2 text-dark hover:text-primary transition-colors duration-300">Gallery</a>
+                <a href="contact.html" class="block py-2 text-dark hover:text-primary transition-colors duration-300">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="pt-24 pb-12 bg-gradient-to-r from-primary to-blue-600 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Projects</h1>
+            <p class="text-xl md:text-2xl opacity-90">Discover the innovative solutions we've crafted for our clients</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-16">
+        <div class="container mx-auto px-6">
+            <!-- Filter Navigation -->
+            <div class="text-center mb-12">
+                <div class="inline-flex bg-white rounded-lg shadow-md p-2">
+                    <button class="filter-btn active px-6 py-2 rounded-md font-semibold text-primary bg-blue-50" data-filter="all">
+                        All Projects
+                    </button>
+                    <button class="filter-btn px-6 py-2 rounded-md font-semibold text-gray-600 hover:text-primary" data-filter="web">
+                        Web Development
+                    </button>
+                    <button class="filter-btn px-6 py-2 rounded-md font-semibold text-gray-600 hover:text-primary" data-filter="mobile">
+                        Mobile Apps
+                    </button>
+                    <button class="filter-btn px-6 py-2 rounded-md font-semibold text-gray-600 hover:text-primary" data-filter="design">
+                        Design
+                    </button>
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8 mb-16" id="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300" data-category="web">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <div class="flex space-x-4">
+                                <button class="bg-white text-dark px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+                                    <i class="fas fa-external-link-alt mr-2"></i>View Live
+                                </button>
+                                <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                                    <i class="fas fa-info-circle mr-2"></i>Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">Web Development</span>
+                            <div class="flex space-x-2">
+                                <span class="w-3 h-3 bg-blue-500 rounded-full"></span>
+                                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
+                                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">E-Commerce Platform</h3>
+                        <p class="text-gray-600 mb-4">A comprehensive e-commerce solution with advanced features like real-time inventory management, multiple payment gateways, and AI-powered recommendations.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">React</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Node.js</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">MongoDB</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">Completed: March 2024</span>
+                            <a href="#" class="text-primary hover:text-blue-700 font-semibold">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300" data-category="mobile">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <div class="flex space-x-4">
+                                <button class="bg-white text-dark px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+                                    <i class="fas fa-external-link-alt mr-2"></i>View Live
+                                </button>
+                                <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                                    <i class="fas fa-info-circle mr-2"></i>Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">Mobile App</span>
+                            <div class="flex space-x-2">
+                                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
+                                <span class="w-3 h-3 bg-blue-500 rounded-full"></span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Fitness Tracking App</h3>
+                        <p class="text-gray-600 mb-4">A comprehensive fitness application with workout tracking, nutrition planning, social features, and integration with popular wearable devices.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">React Native</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Firebase</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">HealthKit</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">Completed: February 2024</span>
+                            <a href="#" class="text-primary hover:text-blue-700 font-semibold">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300" data-category="design">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <div class="flex space-x-4">
+                                <button class="bg-white text-dark px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+                                    <i class="fas fa-external-link-alt mr-2"></i>View Live
+                                </button>
+                                <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                                    <i class="fas fa-info-circle mr-2"></i>Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">Brand Design</span>
+                            <div class="flex space-x-2">
+                                <span class="w-3 h-3 bg-purple-500 rounded-full"></span>
+                                <span class="w-3 h-3 bg-pink-500 rounded-full"></span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Corporate Rebranding</h3>
+                        <p class="text-gray-600 mb-4">Complete brand identity redesign including logo, color palette, typography, and marketing materials for a Fortune 500 company.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Illustrator</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Photoshop</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Figma</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">Completed: January 2024</span>
+                            <a href="#" class="text-primary hover:text-blue-700 font-semibold">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300" data-category="web">
+                    <div class="h-48 bg-gradient-to-br from-yellow-400 to-orange-500 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <div class="flex space-x-4">
+                                <button class="bg-white text-dark px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+                                    <i class="fas fa-external-link-alt mr-2"></i>View Live
+                                </button>
+                                <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                                    <i class="fas fa-info-circle mr-2"></i>Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">Web Application</span>
+                            <div class="flex space-x-2">
+                                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
+                                <span class="w-3 h-3 bg-orange-500 rounded-full"></span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Project Management Tool</h3>
+                        <p class="text-gray-600 mb-4">Advanced project management platform with team collaboration, time tracking, resource planning, and comprehensive reporting features.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Vue.js</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Laravel</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">PostgreSQL</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">Completed: December 2023</span>
+                            <a href="#" class="text-primary hover:text-blue-700 font-semibold">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300" data-category="mobile">
+                    <div class="h-48 bg-gradient-to-br from-red-400 to-pink-500 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <div class="flex space-x-4">
+                                <button class="bg-white text-dark px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+                                    <i class="fas fa-external-link-alt mr-2"></i>View Live
+                                </button>
+                                <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                                    <i class="fas fa-info-circle mr-2"></i>Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-semibold">Mobile App</span>
+                            <div class="flex space-x-2">
+                                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
+                                <span class="w-3 h-3 bg-pink-500 rounded-full"></span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Food Delivery App</h3>
+                        <p class="text-gray-600 mb-4">Comprehensive food delivery platform with restaurant management, real-time tracking, payment integration, and customer support features.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Flutter</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Django</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Redis</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">Completed: November 2023</span>
+                            <a href="#" class="text-primary hover:text-blue-700 font-semibold">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300" data-category="design">
+                    <div class="h-48 bg-gradient-to-br from-indigo-400 to-blue-500 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <div class="flex space-x-4">
+                                <button class="bg-white text-dark px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+                                    <i class="fas fa-external-link-alt mr-2"></i>View Live
+                                </button>
+                                <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                                    <i class="fas fa-info-circle mr-2"></i>Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-semibold">UI/UX Design</span>
+                            <div class="flex space-x-2">
+                                <span class="w-3 h-3 bg-indigo-500 rounded-full"></span>
+                                <span class="w-3 h-3 bg-blue-500 rounded-full"></span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Banking App Redesign</h3>
+                        <p class="text-gray-600 mb-4">Complete UX/UI overhaul of a mobile banking application focusing on accessibility, security, and user-friendly financial management.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Figma</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Sketch</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Principle</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">Completed: October 2023</span>
+                            <a href="#" class="text-primary hover:text-blue-700 font-semibold">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center">
+                <button class="bg-primary hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300">
+                    Load More Projects
+                </button>
+            </div>
+
+            <!-- Call to Action -->
+            <section class="text-center bg-gradient-to-r from-primary to-blue-600 text-white rounded-lg p-12 mt-16">
+                <h2 class="text-3xl font-bold mb-4">Have a Project in Mind?</h2>
+                <p class="text-xl mb-8 opacity-90">Let's discuss how we can bring your vision to life with our expertise and creativity.</p>
+                <div class="space-x-4">
+                    <a href="contact.html" class="bg-secondary hover:bg-yellow-500 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 inline-block">
+                        Start Your Project
+                    </a>
+                    <a href="about.html" class="border-2 border-white hover:bg-white hover:text-primary text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 inline-block">
+                        Learn About Us
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold">C</span>
+                        </div>
+                        <span class="text-lg font-bold">Company</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Creating exceptional digital experiences that transform businesses.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Facebook">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Twitter">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Web Development</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Mobile Apps</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Digital Marketing</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="about.html" class="hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="projects.html" class="hover:text-white transition-colors duration-300">Projects</a></li>
+                        <li><a href="gallery.html" class="hover:text-white transition-colors duration-300">Gallery</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to get updates on our latest projects and insights.</p>
+                    <form class="space-y-2">
+                        <input type="email" placeholder="Enter your email" class="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded text-white focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded transition-colors duration-300">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="../../assets/js/components/navigation.js"></script>
+    <script src="../../assets/js/components/projects-filter.js"></script>
+    <script src="../../assets/js/main/main.js"></script>
+</body>
+</html>

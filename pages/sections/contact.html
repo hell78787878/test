@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Company Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+        <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../assets/css/main/global.css">
+    <link rel="stylesheet" href="../../assets/css/pages/contact.css">
+</head>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#f59e0b',
+                        dark: '#1f2937',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header id="header" class="fixed w-full top-0 bg-white shadow-md z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">C</span>
+                    </div>
+                    <a href="../main/index.html" class="text-xl font-bold text-dark">Company</a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../main/index.html" class="nav-link text-dark hover:text-primary transition-colors duration-300">Home</a>
+                    <a href="about.html" class="nav-link text-dark hover:text-primary transition-colors duration-300">About</a>
+                    <a href="projects.html" class="nav-link text-dark hover:text-primary transition-colors duration-300">Projects</a>
+                    <a href="gallery.html" class="nav-link text-dark hover:text-primary transition-colors duration-300">Gallery</a>
+                    <a href="contact.html" class="nav-link text-primary font-semibold">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-dark focus:outline-none" aria-label="Toggle mobile menu">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4">
+                <a href="../main/index.html" class="block py-2 text-dark hover:text-primary transition-colors duration-300">Home</a>
+                <a href="about.html" class="block py-2 text-dark hover:text-primary transition-colors duration-300">About</a>
+                <a href="projects.html" class="block py-2 text-dark hover:text-primary transition-colors duration-300">Projects</a>
+                <a href="gallery.html" class="block py-2 text-dark hover:text-primary transition-colors duration-300">Gallery</a>
+                <a href="contact.html" class="block py-2 text-primary font-semibold">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="pt-24 pb-12 bg-gradient-to-r from-primary to-blue-600 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
+            <p class="text-xl md:text-2xl opacity-90">Let's start a conversation about your next project</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-16">
+        <div class="container mx-auto px-6">
+            <!-- Contact Introduction -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-dark mb-4">Get In Touch</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Ready to transform your ideas into reality? We'd love to hear from you. Whether you have a project in mind, 
+                    need consultation, or just want to say hello, don't hesitate to reach out.
+                </p>
+            </div>
+
+            <!-- Contact Form and Info -->
+            <div class="grid lg:grid-cols-2 gap-12 mb-16">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <h3 class="text-2xl font-bold mb-6">Send us a Message</h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium mb-2 text-gray-700">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium mb-2 text-gray-700">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300">
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="email" class="block text-sm font-medium mb-2 text-gray-700">Email Address *</label>
+                                <input type="email" id="email" name="email" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium mb-2 text-gray-700">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="company" class="block text-sm font-medium mb-2 text-gray-700">Company/Organization</label>
+                            <input type="text" id="company" name="company" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300">
+                        </div>
+
+                        <div>
+                            <label for="service" class="block text-sm font-medium mb-2 text-gray-700">Service Interested In</label>
+                            <select id="service" name="service" 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300">
+                                <option value="">Select a service</option>
+                                <option value="web-development">Web Development</option>
+                                <option value="mobile-app">Mobile App Development</option>
+                                <option value="ui-ux-design">UI/UX Design</option>
+                                <option value="digital-marketing">Digital Marketing</option>
+                                <option value="consulting">Consulting</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="budget" class="block text-sm font-medium mb-2 text-gray-700">Project Budget</label>
+                            <select id="budget" name="budget" 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300">
+                                <option value="">Select budget range</option>
+                                <option value="under-5k">Under $5,000</option>
+                                <option value="5k-10k">$5,000 - $10,000</option>
+                                <option value="10k-25k">$10,000 - $25,000</option>
+                                <option value="25k-50k">$25,000 - $50,000</option>
+                                <option value="50k-plus">$50,000+</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-2 text-gray-700">Project Details *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project, goals, timeline, and any specific requirements..."
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300 resize-vertical"></textarea>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <input type="checkbox" id="newsletter" name="newsletter" 
+                                   class="mt-1 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary">
+                            <label for="newsletter" class="text-sm text-gray-600">
+                                Subscribe to our newsletter for updates on latest projects and industry insights
+                            </label>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <input type="checkbox" id="privacy" name="privacy" required 
+                                   class="mt-1 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary">
+                            <label for="privacy" class="text-sm text-gray-600">
+                                I agree to the <a href="#" class="text-primary hover:text-blue-700">Privacy Policy</a> and 
+                                <a href="#" class="text-primary hover:text-blue-700">Terms of Service</a> *
+                            </label>
+                        </div>
+
+                        <button type="submit" 
+                                class="w-full bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300 transform hover:scale-105">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <!-- Contact Details -->
+                    <div class="bg-white rounded-lg shadow-md p-8">
+                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-2">Address</h4>
+                                    <p class="text-gray-600">123 Business Street<br>Suite 456<br>City, State 12345<br>United States</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-2">Phone Numbers</h4>
+                                    <p class="text-gray-600">Main: +1 (555) 123-4567<br>Mobile: +1 (555) 987-6543</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-2">Email Addresses</h4>
+                                    <p class="text-gray-600">General: contact@company.com<br>Support: support@company.com<br>Sales: sales@company.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-clock text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-2">Business Hours</h4>
+                                    <p class="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: Closed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="bg-white rounded-lg shadow-md p-8">
+                        <h3 class="text-2xl font-bold mb-6">Follow Us</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <a href="#" class="flex items-center space-x-3 p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors duration-300" aria-label="Facebook">
+                                <i class="fab fa-facebook text-blue-600 text-xl"></i>
+                                <span class="font-medium">Facebook</span>
+                            </a>
+                            <a href="#" class="flex items-center space-x-3 p-3 bg-sky-50 hover:bg-sky-100 rounded-lg transition-colors duration-300" aria-label="Twitter">
+                                <i class="fab fa-twitter text-sky-600 text-xl"></i>
+                                <span class="font-medium">Twitter</span>
+                            </a>
+                            <a href="#" class="flex items-center space-x-3 p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors duration-300" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin text-blue-700 text-xl"></i>
+                                <span class="font-medium">LinkedIn</span>
+                            </a>
+                            <a href="#" class="flex items-center space-x-3 p-3 bg-pink-50 hover:bg-pink-100 rounded-lg transition-colors duration-300" aria-label="Instagram">
+                                <i class="fab fa-instagram text-pink-600 text-xl"></i>
+                                <span class="font-medium">Instagram</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="bg-gradient-to-r from-primary to-blue-600 text-white rounded-lg p-8">
+                        <h3 class="text-2xl font-bold mb-4">Need Immediate Help?</h3>
+                        <p class="mb-6 opacity-90">For urgent inquiries or immediate assistance, feel free to call us directly or schedule a consultation.</p>
+                        <div class="space-y-3">
+                            <a href="tel:+15551234567" class="flex items-center space-x-3 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-lg p-3 transition-colors duration-300">
+                                <i class="fas fa-phone"></i>
+                                <span>Call Now: +1 (555) 123-4567</span>
+                            </a>
+                            <a href="#" class="flex items-center space-x-3 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-lg p-3 transition-colors duration-300">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Schedule Consultation</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <section class="bg-white rounded-lg shadow-md p-8 mb-16">
+                <h3 class="text-2xl font-bold mb-6 text-center">Find Us</h3>
+                <div class="bg-gray-200 rounded-lg h-96 flex items-center justify-center">
+                    <div class="text-center text-gray-600">
+                        <i class="fas fa-map-marked-alt text-6xl mb-4"></i>
+                        <p class="text-xl font-semibold">Interactive Map</p>
+                        <p>123 Business Street, Suite 456<br>City, State 12345</p>
+                        <div class="mt-4 space-x-4">
+                            <a href="#" class="text-primary hover:text-blue-700 font-semibold">View on Google Maps</a>
+                            <a href="#" class="text-primary hover:text-blue-700 font-semibold">Get Directions</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="mb-16">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-dark mb-4">Frequently Asked Questions</h3>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                </div>
+                
+                <div class="max-w-4xl mx-auto space-y-4">
+                    <div class="faq-item bg-white rounded-lg shadow-md">
+                        <button class="faq-question w-full text-left p-6 font-semibold flex items-center justify-between hover:text-primary transition-colors duration-300">
+                            <span>How long does a typical project take?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-gray-600 hidden">
+                            Project timelines vary depending on complexity and scope. Simple websites typically take 2-4 weeks, while complex web applications can take 3-6 months. We'll provide a detailed timeline during our initial consultation.
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-lg shadow-md">
+                        <button class="faq-question w-full text-left p-6 font-semibold flex items-center justify-between hover:text-primary transition-colors duration-300">
+                            <span>What is your development process?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-gray-600 hidden">
+                            Our process includes: 1) Discovery and planning, 2) Design and wireframing, 3) Development and testing, 4) Review and feedback, 5) Launch and deployment, 6) Ongoing support and maintenance.
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-lg shadow-md">
+                        <button class="faq-question w-full text-left p-6 font-semibold flex items-center justify-between hover:text-primary transition-colors duration-300">
+                            <span>Do you provide ongoing support?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-gray-600 hidden">
+                            Yes, we offer various support packages including bug fixes, security updates, content updates, and feature enhancements. We believe in long-term partnerships with our clients.
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-lg shadow-md">
+                        <button class="faq-question w-full text-left p-6 font-semibold flex items-center justify-between hover:text-primary transition-colors duration-300">
+                            <span>What technologies do you work with?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-gray-600 hidden">
+                            We work with modern technologies including React, Vue.js, Node.js, Python, PHP, mobile frameworks like React Native and Flutter, and various databases and cloud platforms.
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold">C</span>
+                        </div>
+                        <span class="text-lg font-bold">Company</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Creating exceptional digital experiences that transform businesses.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Facebook">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Twitter">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Web Development</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Mobile Apps</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Digital Marketing</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="about.html" class="hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="projects.html" class="hover:text-white transition-colors duration-300">Projects</a></li>
+                        <li><a href="gallery.html" class="hover:text-white transition-colors duration-300">Gallery</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to get updates on our latest projects and insights.</p>
+                    <form class="space-y-2">
+                        <input type="email" placeholder="Enter your email" class="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded text-white focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded transition-colors duration-300">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="../../assets/js/components/navigation.js"></script>
+    <script src="../../assets/js/components/form.js"></script>
+    <script src="../../assets/js/main/main.js"></script>
+</body>
+</html>

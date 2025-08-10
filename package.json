@@ -1,0 +1,47 @@
+{
+  "name": "company-portfolio-frontend",
+  "version": "1.0.0",
+  "description": "A modern, responsive portfolio website for a company built with HTML, CSS, JavaScript, and Tailwind CSS",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 8000 -o",
+    "dev": "npx live-server --port=8000",
+    "build": "echo 'Build process for production deployment'",
+    "lint": "echo 'Linting HTML, CSS, and JavaScript files'",
+    "test": "echo 'Testing functionality across browsers'"
+  },
+  "keywords": [
+    "portfolio",
+    "website",
+    "html",
+    "css",
+    "javascript",
+    "tailwind",
+    "responsive",
+    "frontend",
+    "company"
+  ],
+  "author": "Your Company Name",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "your-repository-url"
+  },
+  "bugs": {
+    "url": "your-repository-url/issues"
+  },
+  "homepage": "your-website-url",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie < 11"
+  ]
+}

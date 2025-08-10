@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Company Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../assets/css/main/global.css">
+    <link rel="stylesheet" href="../../assets/css/pages/gallery.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#f59e0b',
+                        dark: '#1f2937',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header id="header" class="fixed w-full top-0 bg-white shadow-md z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">C</span>
+                    </div>
+                    <a href="../main/index.html" class="text-xl font-bold text-dark">Company</a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../main/index.html" class="nav-link text-dark hover:text-primary transition-colors duration-300">Home</a>
+                    <a href="about.html" class="nav-link text-dark hover:text-primary transition-colors duration-300">About</a>
+                    <a href="projects.html" class="nav-link text-dark hover:text-primary transition-colors duration-300">Projects</a>
+                    <a href="gallery.html" class="nav-link text-primary font-semibold">Gallery</a>
+                    <a href="contact.html" class="nav-link text-dark hover:text-primary transition-colors duration-300">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-dark focus:outline-none" title="Toggle Menu">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4">
+                <a href="../main/index.html" class="block py-2 text-dark hover:text-primary transition-colors duration-300">Home</a>
+                <a href="about.html" class="block py-2 text-dark hover:text-primary transition-colors duration-300">About</a>
+                <a href="projects.html" class="block py-2 text-dark hover:text-primary transition-colors duration-300">Projects</a>
+                <a href="gallery.html" class="block py-2 text-primary font-semibold">Gallery</a>
+                <a href="contact.html" class="block py-2 text-dark hover:text-primary transition-colors duration-300">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="pt-24 pb-12 bg-gradient-to-r from-primary to-blue-600 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Gallery</h1>
+            <p class="text-xl md:text-2xl opacity-90">A comprehensive showcase of our projects, achievements, and memorable moments</p>
+        </div>
+    </section>
+
+    <!-- Gallery Content -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="filter-btn active px-6 py-3 rounded-full border-2 border-primary bg-primary text-white font-semibold transition-all duration-300" data-filter="all">
+                    All Images
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold transition-all duration-300" data-filter="projects">
+                    Projects
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold transition-all duration-300" data-filter="team">
+                    Team
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold transition-all duration-300" data-filter="events">
+                    Events
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold transition-all duration-300" data-filter="office">
+                    Office
+                </button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                
+                <!-- Project Images -->
+                <div class="gallery-item cursor-pointer group" data-category="projects" data-title="E-commerce Platform" data-description="Modern e-commerce solution with advanced features">
+                    <div class="aspect-square bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg overflow-hidden shadow-lg">
+                        <div class="w-full h-full flex items-center justify-center text-white relative">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                                <i class="fas fa-search-plus text-2xl"></i>
+                            </div>
+                            <div class="text-center">
+                                <i class="fas fa-shopping-cart text-4xl mb-2"></i>
+                                <p class="text-sm">E-commerce Platform</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item cursor-pointer group" data-category="projects" data-title="Mobile App Design" data-description="User-friendly mobile application interface">
+                    <div class="aspect-square bg-gradient-to-br from-green-500 to-teal-600 rounded-lg overflow-hidden shadow-lg">
+                        <div class="w-full h-full flex items-center justify-center text-white relative">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                                <i class="fas fa-search-plus text-2xl"></i>
+                            </div>
+                            <div class="text-center">
+                                <i class="fas fa-mobile-alt text-4xl mb-2"></i>
+                                <p class="text-sm">Mobile App Design</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item cursor-pointer group" data-category="projects" data-title="Web Dashboard" data-description="Analytics dashboard with real-time data">
+                    <div class="aspect-square bg-gradient-to-br from-orange-500 to-red-600 rounded-lg overflow-hidden shadow-lg">
+                        <div class="w-full h-full flex items-center justify-center text-white relative">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                                <i class="fas fa-search-plus text-2xl"></i>
+                            </div>
+                            <div class="text-center">
+                                <i class="fas fa-chart-bar text-4xl mb-2"></i>
+                                <p class="text-sm">Web Dashboard</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Images -->
+                <div class="gallery-item cursor-pointer group" data-category="team" data-title="Team Meeting" data-description="Weekly team collaboration session">
+                    <div class="aspect-square bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg overflow-hidden shadow-lg">
+                        <div class="w-full h-full flex items-center justify-center text-white relative">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                                <i class="fas fa-search-plus text-2xl"></i>
+                            </div>
+                            <div class="text-center">
+                                <i class="fas fa-users text-4xl mb-2"></i>
+                                <p class="text-sm">Team Meeting</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item cursor-pointer group" data-category="team" data-title="Brainstorming Session" data-description="Creative ideation and planning">
+                    <div class="aspect-square bg-gradient-to-br from-indigo-500 to-blue-600 rounded-lg overflow-hidden shadow-lg">
+                        <div class="w-full h-full flex items-center justify-center text-white relative">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                                <i class="fas fa-search-plus text-2xl"></i>
+                            </div>
+                            <div class="text-center">
+                                <i class="fas fa-lightbulb text-4xl mb-2"></i>
+                                <p class="text-sm">Brainstorming</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item cursor-pointer group" data-category="team" data-title="Team Building" data-description="Fun team building activities">
+                    <div class="aspect-square bg-gradient-to-br from-yellow-500 to-orange-600 rounded-lg overflow-hidden shadow-lg">
+                        <div class="w-full h-full flex items-center justify-center text-white relative">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                                <i class="fas fa-search-plus text-2xl"></i>
+                            </div>
+                            <div class="text-center">
+                                <i class="fas fa-heart text-4xl mb-2"></i>
+                                <p class="text-sm">Team Building</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Images -->
+                <div class="gallery-item cursor-pointer group" data-category="events" data-title="Product Launch" data-description="Successful product launch event">
+                    <div class="aspect-square bg-gradient-to-br from-pink-500 to-rose-600 rounded-lg overflow-hidden shadow-lg">
+                        <div class="w-full h-full flex items-center justify-center text-white relative">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                                <i class="fas fa-search-plus text-2xl"></i>
+                            </div>
+                            <div class="text-center">
+                                <i class="fas fa-rocket text-4xl mb-2"></i>
+                                <p class="text-sm">Product Launch</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item cursor-pointer group" data-category="events" data-title="Annual Conference" data-description="Industry conference presentation">
+                    <div class="aspect-square bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg overflow-hidden shadow-lg">
+                        <div class="w-full h-full flex items-center justify-center text-white relative">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                                <i class="fas fa-search-plus text-2xl"></i>
+                            </div>
+                            <div class="text-center">
+                                <i class="fas fa-presentation text-4xl mb-2"></i>
+                                <p class="text-sm">Annual Conference</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Office Images -->
+                <div class="gallery-item cursor-pointer group" data-category="office" data-title="Modern Workspace" data-description="Our contemporary office environment">
+                    <div class="aspect-square bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg overflow-hidden shadow-lg">
+                        <div class="w-full h-full flex items-center justify-center text-white relative">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                                <i class="fas fa-search-plus text-2xl"></i>
+                            </div>
+                            <div class="text-center">
+                                <i class="fas fa-building text-4xl mb-2"></i>
+                                <p class="text-sm">Modern Workspace</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item cursor-pointer group" data-category="office" data-title="Meeting Room" data-description="State-of-the-art meeting facilities">
+                    <div class="aspect-square bg-gradient-to-br from-slate-500 to-gray-600 rounded-lg overflow-hidden shadow-lg">
+                        <div class="w-full h-full flex items-center justify-center text-white relative">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                                <i class="fas fa-search-plus text-2xl"></i>
+                            </div>
+                            <div class="text-center">
+                                <i class="fas fa-door-open text-4xl mb-2"></i>
+                                <p class="text-sm">Meeting Room</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item cursor-pointer group" data-category="projects" data-title="Brand Identity" data-description="Complete brand identity redesign">
+                    <div class="aspect-square bg-gradient-to-br from-violet-500 to-purple-600 rounded-lg overflow-hidden shadow-lg">
+                        <div class="w-full h-full flex items-center justify-center text-white relative">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                                <i class="fas fa-search-plus text-2xl"></i>
+                            </div>
+                            <div class="text-center">
+                                <i class="fas fa-palette text-4xl mb-2"></i>
+                                <p class="text-sm">Brand Identity</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item cursor-pointer group" data-category="events" data-title="Awards Ceremony" data-description="Recognition for outstanding achievements">
+                    <div class="aspect-square bg-gradient-to-br from-amber-500 to-yellow-600 rounded-lg overflow-hidden shadow-lg">
+                        <div class="w-full h-full flex items-center justify-center text-white relative">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                                <i class="fas fa-search-plus text-2xl"></i>
+                            </div>
+                            <div class="text-center">
+                                <i class="fas fa-trophy text-4xl mb-2"></i>
+                                <p class="text-sm">Awards Ceremony</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Zoom Modal -->
+    <div id="zoom-modal" class="fixed inset-0 bg-black bg-opacity-95 z-50 hidden items-center justify-center">
+        <div class="relative max-w-6xl max-h-full p-4">
+            <!-- Close Button -->
+            <button id="close-zoom" class="absolute top-4 right-4 text-white text-3xl z-60 hover:text-gray-300 transition-colors w-12 h-12 flex items-center justify-center bg-black bg-opacity-50 rounded-full">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <!-- Image Container -->
+            <div class="flex items-center justify-center">
+                <div id="zoom-content" class="max-w-full max-h-full">
+                    <!-- Dynamic content will be inserted here -->
+                </div>
+            </div>
+            
+            <!-- Image Info -->
+            <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-white text-center max-w-2xl">
+                <h3 id="zoom-title" class="text-2xl font-bold mb-2"></h3>
+                <p id="zoom-description" class="text-sm opacity-80"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold">C</span>
+                        </div>
+                        <span class="text-lg font-bold">Company</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Creating exceptional digital experiences that transform businesses.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Facebook">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Twitter">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Web Development</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Mobile Apps</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Digital Marketing</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="about.html" class="hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="projects.html" class="hover:text-white transition-colors duration-300">Projects</a></li>
+                        <li><a href="gallery.html" class="hover:text-white transition-colors duration-300">Gallery</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to get updates on our latest projects and insights.</p>
+                    <form class="space-y-2">
+                        <input type="email" placeholder="Enter your email" class="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded text-white focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded transition-colors duration-300">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/components/navigation.js"></script>
+    <script src="../../assets/js/pages/gallery-page.js"></script>
+    <script src="../../assets/js/main/main.js"></script>
+</body>
+</html>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#f59e0b',
+                        dark: '#1f2937',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header id="header" class="fixed w-full top-0 bg-white shadow-md z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">C</span>
+                    </div>
+                    <a href="../main/index.html" class="text-xl font-bold text-dark">Company</a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../main/index.html" class="nav-link text-dark hover:text-primary transition-colors duration-300">Home</a>
+                    <a href="about.html" class="nav-link text-dark hover:text-primary transition-colors duration-300">About</a>
+                    <a href="projects.html" class="nav-link text-dark hover:text-primary transition-colors duration-300">Projects</a>
+                    <a href="gallery.html" class="nav-link text-primary font-semibold">Gallery</a>
+                    <a href="contact.html" class="nav-link text-dark hover:text-primary transition-colors duration-300">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-dark focus:outline-none" aria-label="Toggle mobile menu">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4">
+                <a href="../main/index.html" class="block py-2 text-dark hover:text-primary transition-colors duration-300">Home</a>
+                <a href="about.html" class="block py-2 text-dark hover:text-primary transition-colors duration-300">About</a>
+                <a href="projects.html" class="block py-2 text-dark hover:text-primary transition-colors duration-300">Projects</a>
+                <a href="gallery.html" class="block py-2 text-primary font-semibold">Gallery</a>
+                <a href="contact.html" class="block py-2 text-dark hover:text-primary transition-colors duration-300">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="pt-24 pb-12 bg-gradient-to-r from-primary to-blue-600 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Gallery</h1>
+            <p class="text-xl md:text-2xl opacity-90">A visual journey through our work, team, and company culture</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-16">
+        <div class="container mx-auto px-6">
+            <!-- Filter Navigation -->
+            <div class="text-center mb-12">
+                <div class="inline-flex bg-white rounded-lg shadow-md p-2 flex-wrap gap-2">
+                    <button class="gallery-filter-btn active px-4 py-2 rounded-md font-semibold text-primary bg-blue-50" data-filter="all">
+                        All Images
+                    </button>
+                    <button class="gallery-filter-btn px-4 py-2 rounded-md font-semibold text-gray-600 hover:text-primary" data-filter="projects">
+                        Projects
+                    </button>
+                    <button class="gallery-filter-btn px-4 py-2 rounded-md font-semibold text-gray-600 hover:text-primary" data-filter="team">
+                        Team
+                    </button>
+                    <button class="gallery-filter-btn px-4 py-2 rounded-md font-semibold text-gray-600 hover:text-primary" data-filter="office">
+                        Office
+                    </button>
+                    <button class="gallery-filter-btn px-4 py-2 rounded-md font-semibold text-gray-600 hover:text-primary" data-filter="events">
+                        Events
+                    </button>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12" id="gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item aspect-square bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer relative overflow-hidden" data-category="projects">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                        <p class="text-white text-sm font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">E-Commerce Platform</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item aspect-square bg-gradient-to-br from-green-400 to-green-600 rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer relative overflow-hidden" data-category="team">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                        <p class="text-white text-sm font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">Team Meeting</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item aspect-square bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer relative overflow-hidden" data-category="office">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                        <p class="text-white text-sm font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">Modern Workspace</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item aspect-square bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer relative overflow-hidden" data-category="events">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                        <p class="text-white text-sm font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">Company Event</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item aspect-square bg-gradient-to-br from-red-400 to-pink-500 rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer relative overflow-hidden" data-category="projects">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                        <p class="text-white text-sm font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">Mobile App Design</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item aspect-square bg-gradient-to-br from-indigo-400 to-blue-500 rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer relative overflow-hidden" data-category="team">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                        <p class="text-white text-sm font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">Brainstorming Session</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 7 -->
+                <div class="gallery-item aspect-square bg-gradient-to-br from-teal-400 to-green-500 rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer relative overflow-hidden" data-category="office">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                        <p class="text-white text-sm font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">Reception Area</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 8 -->
+                <div class="gallery-item aspect-square bg-gradient-to-br from-pink-400 to-purple-500 rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer relative overflow-hidden" data-category="events">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                        <p class="text-white text-sm font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">Product Launch</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 9 -->
+                <div class="gallery-item aspect-square bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer relative overflow-hidden" data-category="projects">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                        <p class="text-white text-sm font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">Web Application</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 10 -->
+                <div class="gallery-item aspect-square bg-gradient-to-br from-lime-400 to-green-500 rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer relative overflow-hidden" data-category="team">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                        <p class="text-white text-sm font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">Team Collaboration</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 11 -->
+                <div class="gallery-item aspect-square bg-gradient-to-br from-violet-400 to-purple-600 rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer relative overflow-hidden" data-category="office">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                        <p class="text-white text-sm font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">Conference Room</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 12 -->
+                <div class="gallery-item aspect-square bg-gradient-to-br from-amber-400 to-orange-600 rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer relative overflow-hidden" data-category="events">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                        <p class="text-white text-sm font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">Team Building</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 13 -->
+                <div class="gallery-item aspect-square bg-gradient-to-br from-emerald-400 to-teal-600 rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer relative overflow-hidden" data-category="projects">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                        <p class="text-white text-sm font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">Brand Identity</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 14 -->
+                <div class="gallery-item aspect-square bg-gradient-to-br from-rose-400 to-pink-600 rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer relative overflow-hidden" data-category="team">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                        <p class="text-white text-sm font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">Code Review</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 15 -->
+                <div class="gallery-item aspect-square bg-gradient-to-br from-sky-400 to-indigo-600 rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer relative overflow-hidden" data-category="office">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                        <p class="text-white text-sm font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">Break Area</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 16 -->
+                <div class="gallery-item aspect-square bg-gradient-to-br from-orange-400 to-red-600 rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer relative overflow-hidden" data-category="events">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                        <p class="text-white text-sm font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">Annual Celebration</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mb-16">
+                <button class="bg-primary hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300">
+                    Load More Images
+                </button>
+            </div>
+
+            <!-- Statistics Section -->
+            <section class="bg-white rounded-lg shadow-md p-8 mb-16">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-dark mb-4">Our Journey in Numbers</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">500+</div>
+                        <div class="text-gray-600">Photos Captured</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">50+</div>
+                        <div class="text-gray-600">Projects Documented</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">100+</div>
+                        <div class="text-gray-600">Team Moments</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">25+</div>
+                        <div class="text-gray-600">Events Covered</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="text-center bg-gradient-to-r from-primary to-blue-600 text-white rounded-lg p-12">
+                <h2 class="text-3xl font-bold mb-4">Want to Be Part of Our Story?</h2>
+                <p class="text-xl mb-8 opacity-90">Join our team and contribute to creating amazing projects and memorable moments.</p>
+                <div class="space-x-4">
+                    <a href="contact.html" class="bg-secondary hover:bg-yellow-500 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 inline-block">
+                        Join Our Team
+                    </a>
+                    <a href="projects.html" class="border-2 border-white hover:bg-white hover:text-primary text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 inline-block">
+                        View Our Work
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold">C</span>
+                        </div>
+                        <span class="text-lg font-bold">Company</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Creating exceptional digital experiences that transform businesses.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Facebook">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Twitter">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Web Development</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Mobile Apps</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Digital Marketing</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="about.html" class="hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="projects.html" class="hover:text-white transition-colors duration-300">Projects</a></li>
+                        <li><a href="gallery.html" class="hover:text-white transition-colors duration-300">Gallery</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to get updates on our latest projects and insights.</p>
+                    <form class="space-y-2">
+                        <input type="email" placeholder="Enter your email" class="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded text-white focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded transition-colors duration-300">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="../../assets/js/components/navigation.js"></script>
+    <script src="../../assets/js/components/gallery.js"></script>
+    <script src="../../assets/js/main/main.js"></script>
+</body>
+</html>

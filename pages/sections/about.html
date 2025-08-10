@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Company Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+        <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../assets/css/main/global.css">
+    <link rel="stylesheet" href="../../assets/css/pages/about.css">
+</head>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#f59e0b',
+                        dark: '#1f2937',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header id="header" class="fixed w-full top-0 bg-white shadow-md z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">C</span>
+                    </div>
+                    <a href="../main/index.html" class="text-xl font-bold text-dark">Company</a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../main/index.html" class="nav-link text-dark hover:text-primary transition-colors duration-300">Home</a>
+                    <a href="about.html" class="nav-link text-primary font-semibold">About</a>
+                    <a href="projects.html" class="nav-link text-dark hover:text-primary transition-colors duration-300">Projects</a>
+                    <a href="gallery.html" class="nav-link text-dark hover:text-primary transition-colors duration-300">Gallery</a>
+                    <a href="contact.html" class="nav-link text-dark hover:text-primary transition-colors duration-300">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-dark focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4">
+                <a href="../main/index.html" class="block py-2 text-dark hover:text-primary transition-colors duration-300">Home</a>
+                <a href="about.html" class="block py-2 text-primary font-semibold">About</a>
+                <a href="projects.html" class="block py-2 text-dark hover:text-primary transition-colors duration-300">Projects</a>
+                <a href="gallery.html" class="block py-2 text-dark hover:text-primary transition-colors duration-300">Gallery</a>
+                <a href="contact.html" class="block py-2 text-dark hover:text-primary transition-colors duration-300">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="pt-24 pb-12 bg-gradient-to-r from-primary to-blue-600 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">About Our Company</h1>
+            <p class="text-xl md:text-2xl opacity-90">Discover our story, values, and the team behind our success</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-16">
+        <div class="container mx-auto px-6">
+            <!-- Company Story -->
+            <section class="mb-20">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-dark mb-6">Our Story</h2>
+                        <p class="text-gray-600 mb-4">
+                            Founded in 2015, our company emerged from a simple vision: to bridge the gap between innovative technology and practical business solutions. What started as a small team of passionate developers has grown into a comprehensive digital agency serving clients worldwide.
+                        </p>
+                        <p class="text-gray-600 mb-4">
+                            Over the years, we've evolved from a startup working out of a garage to a full-service company with a dedicated team of designers, developers, strategists, and consultants. Our journey has been marked by continuous learning, adaptation, and an unwavering commitment to excellence.
+                        </p>
+                        <p class="text-gray-600">
+                            Today, we're proud to have helped over 500 businesses transform their digital presence and achieve their goals through innovative solutions and strategic partnerships.
+                        </p>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg p-8">
+                        <div class="grid grid-cols-2 gap-6 text-center">
+                            <div>
+                                <div class="text-3xl font-bold text-primary mb-2">500+</div>
+                                <div class="text-gray-600">Projects Completed</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold text-primary mb-2">50+</div>
+                                <div class="text-gray-600">Team Members</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold text-primary mb-2">8+</div>
+                                <div class="text-gray-600">Years Experience</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold text-primary mb-2">99%</div>
+                                <div class="text-gray-600">Client Satisfaction</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mission & Vision -->
+            <section class="mb-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-dark mb-4">Mission & Vision</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-bullseye text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-center mb-4">Our Mission</h3>
+                        <p class="text-gray-600 text-center">
+                            To empower businesses with innovative digital solutions that drive growth, enhance efficiency, and create meaningful connections with their audiences. We believe in transforming ideas into reality through cutting-edge technology and creative excellence.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-eye text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-center mb-4">Our Vision</h3>
+                        <p class="text-gray-600 text-center">
+                            To be the leading digital transformation partner, recognized for our innovation, integrity, and impact. We envision a world where technology seamlessly enhances human potential and creates opportunities for businesses to thrive in the digital age.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Values -->
+            <section class="mb-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-dark mb-4">Our Core Values</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-lightbulb text-primary text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Innovation</h3>
+                        <p class="text-gray-600">We continuously explore new technologies and methodologies to provide cutting-edge solutions that keep our clients ahead of the curve.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-handshake text-green-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Integrity</h3>
+                        <p class="text-gray-600">We build trust through transparency, honesty, and ethical practices in all our interactions with clients, partners, and team members.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-star text-purple-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Excellence</h3>
+                        <p class="text-gray-600">We are committed to delivering high-quality work that exceeds expectations and creates lasting value for our clients.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-users text-red-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Collaboration</h3>
+                        <p class="text-gray-600">We believe in the power of teamwork and foster an environment where diverse perspectives contribute to innovative solutions.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-seedling text-yellow-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Growth</h3>
+                        <p class="text-gray-600">We are committed to continuous learning and improvement, both for ourselves and for the clients we serve.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-heart text-indigo-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Passion</h3>
+                        <p class="text-gray-600">We love what we do and bring enthusiasm and dedication to every project, no matter how big or small.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team Section -->
+            <section class="mb-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-dark mb-4">Meet Our Team</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Behind every great project is a great team. Meet the talented individuals who make our vision a reality.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Team Member 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                        <div class="h-64 bg-gradient-to-br from-blue-400 to-blue-600"></div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-bold mb-2">John Smith</h3>
+                            <p class="text-primary font-semibold mb-3">CEO & Founder</p>
+                            <p class="text-gray-600 text-sm mb-4">Visionary leader with 15+ years in tech industry</p>
+                            <div class="flex justify-center space-x-3">
+                                <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                        <div class="h-64 bg-gradient-to-br from-green-400 to-green-600"></div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-bold mb-2">Sarah Johnson</h3>
+                            <p class="text-primary font-semibold mb-3">CTO</p>
+                            <p class="text-gray-600 text-sm mb-4">Tech innovator specializing in scalable solutions</p>
+                            <div class="flex justify-center space-x-3">
+                                <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                        <div class="h-64 bg-gradient-to-br from-purple-400 to-purple-600"></div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-bold mb-2">Mike Chen</h3>
+                            <p class="text-primary font-semibold mb-3">Lead Designer</p>
+                            <p class="text-gray-600 text-sm mb-4">Creative director with eye for exceptional UX/UI</p>
+                            <div class="flex justify-center space-x-3">
+                                <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-dribbble"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-behance"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 4 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                        <div class="h-64 bg-gradient-to-br from-yellow-400 to-yellow-600"></div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-bold mb-2">Emily Davis</h3>
+                            <p class="text-primary font-semibold mb-3">Project Manager</p>
+                            <p class="text-gray-600 text-sm mb-4">Organizational expert ensuring seamless delivery</p>
+                            <div class="flex justify-center space-x-3">
+                                <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="text-center bg-gradient-to-r from-primary to-blue-600 text-white rounded-lg p-12">
+                <h2 class="text-3xl font-bold mb-4">Ready to Work Together?</h2>
+                <p class="text-xl mb-8 opacity-90">Let's discuss how we can help transform your business with our expertise and passion.</p>
+                <div class="space-x-4">
+                    <a href="contact.html" class="bg-secondary hover:bg-yellow-500 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 inline-block">
+                        Get In Touch
+                    </a>
+                    <a href="projects.html" class="border-2 border-white hover:bg-white hover:text-primary text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 inline-block">
+                        View Our Work
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold">C</span>
+                        </div>
+                        <span class="text-lg font-bold">Company</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Creating exceptional digital experiences that transform businesses.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Web Development</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Mobile Apps</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Digital Marketing</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="about.html" class="hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="projects.html" class="hover:text-white transition-colors duration-300">Projects</a></li>
+                        <li><a href="gallery.html" class="hover:text-white transition-colors duration-300">Gallery</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to get updates on our latest projects and insights.</p>
+                    <form class="space-y-2">
+                        <input type="email" placeholder="Enter your email" class="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded text-white focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded transition-colors duration-300">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+        <!-- JavaScript -->
+    <script src="../../assets/js/components/navigation.js"></script>
+    <script src="../../assets/js/main/main.js"></script>
+</body>
+</body>
+</html>
